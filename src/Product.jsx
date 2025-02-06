@@ -13,7 +13,6 @@ export default function Product({name,image,price,description}) {
       border: "2px solid black",
       width: "220px",
       padding: "10px",
-
       borderRadius: "8px",
       boxShadow: "3px 3px 10px rgba(0, 0, 0, 0.1)",
       textAlign: "center"

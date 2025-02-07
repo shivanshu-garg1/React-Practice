@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 
-export default function Product({name,image,price,description}) {
+export default function Product({name,image,price,description,theme}) {
   const handelSave =()=>{
     alert("Save Button");
   }
@@ -10,11 +10,10 @@ export default function Product({name,image,price,description}) {
     alert("Delete Button");
   }
     const innerDiv = {
-      border: "2px solid black",
+      
       width: "220px",
       padding: "10px",
-      borderRadius: "8px",
-      boxShadow: "3px 3px 10px rgba(0, 0, 0, 0.1)",
+     
       textAlign: "center"
     }
     const img = {
@@ -23,7 +22,7 @@ export default function Product({name,image,price,description}) {
   return (
     <>
     
-    <div style={innerDiv}>
+    <div style={innerDiv} className={` border-2 border-black rounded ${theme === "dark" ? "bg-gray-800 text-white border-2 border-gray-100" : " text-black"}`}>
     <img src={image} alt={name} style={img} />
         <h2>{name}</h2>
         

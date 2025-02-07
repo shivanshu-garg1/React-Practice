@@ -1,6 +1,6 @@
 import React from 'react'
 import Todo from './Todo'
-export default function TodoList() {
+export default function TodoList({theme}) {
   const todos = [
     { id: 1, text: "Complete React project", isCompleted: true },
     { id: 2, text: "Study for exams", isCompleted: false },
@@ -8,13 +8,13 @@ export default function TodoList() {
   ];
   const name = "Shivanshu";
   return (
-    <>
-    <h1>Todo</h1>
+    <div className={`p-5 ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
+    <h1 className='pb-5 text-center font-bold text-xl'>Todo</h1>
     {
       todos.map((ele)=>(
-        <Todo  key={ele.id} text={ele.text} isCompleted={ele.isCompleted} />
+        <Todo  key={ele.id} text={ele.text} isCompleted={ele.isCompleted} theme={theme} />
       ))
     }
-    </>
+    </div>
   )
 }
